@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -31,8 +30,6 @@ public class Puzzle1 {
             // derive the differences from the lists and sum them.
             result = IntStream.range(0,left.size()).map(i -> (left.get(i) - right.get(i))).map(Math::abs).sum();
 
-            // print the result.
-            System.out.println("distance: " + result);
         } catch (Exception ex) {
             System.err.println("that went bad: " + ex.getMessage());
         }
@@ -63,7 +60,6 @@ public class Puzzle1 {
                     .reduce(0L, Long::sum);
             result = (int)rslt;
 
-            System.out.println("similarity: " + result);
         } catch (Exception e) {
             System.err.println("exception calculating similarity: " + e.getMessage());
             e.printStackTrace();
